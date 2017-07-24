@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<title>Hangman</title>
+</head>
+
+<body>
+<script src="theEngine.js"></script>
+
+<audio  autoplay loop src="background.mp3"></audio>
+
+	<img src="img/kawan.png" alt="logo kawan" style="width: 250px; height: 70px;">
+	<button type="button" onclick="home();"><img src="img/home.png" alt="homebtn"></button>
+	<h1 id="h1">Are You Ready!!!</h1>
+
+	<div id="menu">
+		<p id="select">Please choose:</p>
+		<div class="button">
+			<button type="button" onclick="startPlayT1(); visibleSoalanT1();">Tahap 1</button> 
+			<button type="button" onclick="startPlayT2(); visibleSoalanT2();">Tahap 2</button>
+		</div>
+	</div>
+
+	<img id="hangman">
+
+	<div id="soalanTahap1">
+		<p style="margin-bottom: 15px">1. Nizam enggan menceritakan rahsianya kepada Anuar kerana dia tahu Anuar__________.</p>
+
+				<div class="tooltip"><label for="A1" class="pilihanT1 indent">
+				<input type="radio" class="t1s1" id="A1" value="A. otak udang" onclick="receiveAnswer(this, this.parentElement)">A. otak udang</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B1" class="pilihanT1 indent">
+				<input type="radio" class="t1s1" id="B1" value="B. mulut tempayan" onclick="receiveAnswer(this, this.parentElement, 't1s1')">B. mulut tempayan</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C1" class="pilihanT1 indent">
+				<input type="radio" class="t1s1" id="C1" value="C. mulut murai" onclick="receiveAnswer(this, this.parentElement)">C. mulut murai</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D1" class="pilihanT1 indent">
+				<input type="radio" class="t1s1" id="D1" value="D. telinga kuali" onclick="receiveAnswer(this, this.parentElement)">D. telinga kuali</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+	
+
+			<p style="margin-bottom: 15px">2. Adik menangis __________ sakit perut.</p>
+			
+				<div class="tooltip"><label for="A2" class="pilihanT1 indent">
+				<input type="radio" class="t1s2" id="A2" value="A. lalu" onclick="receiveAnswer(this, this.parentElement)">A. lalu</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B2" class="pilihanT1 indent">
+				<input type="radio" class="t1s2" id="B2" value="B. kerana" onclick="receiveAnswer(this, this.parentElement, 't1s2')">B. kerana</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C2" class="pilihanT1 indent">
+				<input type="radio" class="t1s2" id="C2" value="C. atau" onclick="receiveAnswer(this, this.parentElement)">C. atau</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D2" class="pilihanT1 indent">
+				<input type="radio" class="t1s2" id="D2" value="D. dan" onclick="receiveAnswer(this, this.parentElement)">D. dan</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">3. What number comes before <b>174</b>?</p>
+			
+				<div class="tooltip"><label for="A3" class="pilihanT1 indent">
+				<input type="radio" class="t1s3" id="A3" value="A. 165" onclick="receiveAnswer(this, this.parentElement)">A. 165</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B3" class="pilihanT1 indent">
+				<input type="radio" class="t1s3" id="B3" value="B. 164" onclick="receiveAnswer(this, this.parentElement)">B. 164</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C3" class="pilihanT1 indent">
+				<input type="radio" class="t1s3" id="C3" value="C. 173" onclick="receiveAnswer(this, this.parentElement, 't1s3')">C. 173</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D3" class="pilihanT1 indent">
+				<input type="radio" class="t1s3" id="D3" value="D. 147" onclick="receiveAnswer(this, this.parentElement)">D. 147</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+			
+
+			<p style="margin-bottom: 15px">4. <b>"Four hundred and thirty seven"</b> its digit number is __________.</p>
+			
+				<div class="tooltip"><label for="A4" class="pilihanT1 indent">
+				<input type="radio" class="t1s4" id="A4" value="A. 437" onclick="receiveAnswer(this, this.parentElement, 't1s4')">A. 437</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B4" class="pilihanT1 indent">
+				<input type="radio" class="t1s4" id="B4" value="B. 400 & 37" onclick="receiveAnswer(this, this.parentElement)">B. 400 & 37</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C4" class="pilihanT1 indent">
+				<input type="radio" class="t1s4" id="C4" value="C. 473" onclick="receiveAnswer(this, this.parentElement)">C. 473</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D4" class="pilihanT1 indent">
+				<input type="radio" class="t1s4" id="D4" value="D. 537" onclick="receiveAnswer(this, this.parentElement)">D. 537</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">5. Pisang adalah sumber __________ yang baik.</p>
+			
+				<div class="tooltip"><label for="A5" class="pilihanT1 indent">
+				<input type="radio" class="t1s5" id="A5" value="A. protein" onclick="receiveAnswer(this, this.parentElement)">A. protein</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B5" class="pilihanT1 indent">
+				<input type="radio" class="t1s5" id="B5" value="B. lemak" onclick="receiveAnswer(this, this.parentElement)">B. lemak</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C5" class="pilihanT1 indent">
+				<input type="radio" class="t1s5" id="C5" value="C. kolestrol" onclick="receiveAnswer(this, this.parentElement)">C. kolestrol</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D5" class="pilihanT1 indent">
+				<input type="radio" class="t1s5" id="D5" value="D. tenaga" onclick="receiveAnswer(this, this.parentElement, 't1s5')">D. tenaga</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">6. Fungsi usus kecil adalah __________.</p>
+			
+				<div class="tooltip"><label for="A6" class="pilihanT1 indent">
+				<input type="radio" class="t1s6" id="A6" value="A. menyerap nutrisi" onclick="receiveAnswer(this, this.parentElement, 't1s6')">A. menyerap nutrisi</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B6" class="pilihanT1 indent">
+				<input type="radio" class="t1s6" id="B6" value="B. menyalurkan darah" onclick="receiveAnswer(this, this.parentElement)">B. menyalurkan darah</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C6" class="pilihanT1 indent">
+				<input type="radio" class="t1s6" id="C6" value="C. menyimpan makanan" onclick="receiveAnswer(this, this.parentElement)">C. menyimpan makanan</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D6" class="pilihanT1 indent">
+				<input type="radio" class="t1s6" id="D6" value="D. menghasilkan darah" onclick="receiveAnswer(this, this.parentElement)">D. menghasilkan darah</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">7. Berikut adalah kepentingan rumah kepada manusia kecuali __________.</p>
+			
+				<div class="tooltip"><label for="A7" class="pilihanT1 indent">
+				<input type="radio" class="t1s7" id="A7" value="A. perlindungan" onclick="receiveAnswer(this, this.parentElement)">A. perlindungan daripada binatang buas</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B7" class="pilihanT1 indent">
+				<input type="radio" class="t1s7" id="B7" value="B. tempat" onclick="receiveAnswer(this, this.parentElement)">B. tempat istirehat</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C7" class="pilihanT1 indent">
+				<input type="radio" class="t1s7" id="C7" value="C. perlindungan" onclick="receiveAnswer(this, this.parentElement)">C. perlindungan cahaya matahari</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D7" class="pilihanT1 indent">
+				<input type="radio" class="t1s7" id="D7" value="D. sumber makanan" onclick="receiveAnswer(this, this.parentElement, 't1s7')">D. sumber makanan</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">8. Mr. Syafiq __________ many cars.</p>
+			
+				<div class="tooltip"><label for="A8" class="pilihanT1 indent">
+				<input type="radio" class="t1s8" id="A8" value="8A. has" onclick="receiveAnswer(this, this.parentElement, 't1s8')">A. has</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B8" class="pilihanT1 indent">
+				<input type="radio" class="t1s8" id="B8" value="B. have" onclick="receiveAnswer(this, this.parentElement)">B. have</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C8" class="pilihanT1 indent">
+				<input type="radio" class="t1s8" id="C8" value="C. was" onclick="receiveAnswer(this, this.parentElement)">C. was</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D8" class="pilihanT1 indent">
+				<input type="radio" class="t1s8" id="D8" value="D. were" onclick="receiveAnswer(this, this.parentElement)">D. were</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">9. Does he __________ the door key?</p>
+			
+				<div class="tooltip"><label for="A9" class="pilihanT1 indent">
+				<input type="radio" class="t1s9" id="A9" value="A. has" onclick="receiveAnswer(this, this.parentElement)">A. has</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B9" class="pilihanT1 indent">
+				<input type="radio" class="t1s9" id="B9" value="9B. have" onclick="receiveAnswer(this, this.parentElement, 't1s9')">B. have</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C9" class="pilihanT1 indent">
+				<input type="radio" class="t1s9" id="C9" value="C. with" onclick="receiveAnswer(this, this.parentElement)">C. with</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D9" class="pilihanT1 indent">
+				<input type="radio" class="t1s9" id="D9" value="D. was" onclick="receiveAnswer(this, this.parentElement)">D. was</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+			<p style="margin-bottom: 15px">10. Bahagian gigi yang paling keras ialah__________.</p>
+
+				<div class="tooltip"><label for="A10" class="pilihanT1 indent">
+				<input type="radio" class="t1s10" id="A10" value="A. saraf" onclick="receiveAnswer(this, this.parentElement)">A. saraf</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="B10" class="pilihanT1 indent">
+				<input type="radio" class="t1s10" id="B10" value="B. gusi" onclick="receiveAnswer(this, this.parentElement)">B. gusi</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="C10" class="pilihanT1 indent">
+				<input type="radio" class="t1s10" id="C10" value="C. enamel" onclick="receiveAnswer(this, this.parentElement, 't1s10')">C. enamel</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="D10" class="pilihanT1 indent">
+				<input type="radio" class="t1s10" id="D10" value="D. dentin" onclick="receiveAnswer(this, this.parentElement)">D. dentin</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+	</div>
+
+
+	<div id="soalanTahap2">
+		<p style="margin-bottom: 15px">1. "Kecil __________ baju ini, adik punyakah?" tanya Ramli kepada emaknya.</p>
+			
+				<div class="tooltip"><label for="1A1" class="pilihanT2 indent">
+				<input type="radio" class="t2s1" id="1A1" value="A. amat" onclick="receiveAnswer(this, this.parentElement)">A. amat</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B1" class="pilihanT2 indent">
+				<input type="radio" class="t2s1" id="1B1" value="B. paling" onclick="receiveAnswer(this, this.parentElement)">B. paling</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C1" class="pilihanT2 indent">
+				<input type="radio" class="t2s1" id="1C1" value="C. nian" onclick="receiveAnswer(this, this.parentElement)">C. nian</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D1" class="pilihanT2 indent">
+				<input type="radio" class="t2s1" id="1D1" value="D. sungguh" onclick="receiveAnswer(this, this.parentElement, 't2s1')">D. sungguh</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">2. Badan abang __________ terkena duri ketika melalui kawasan hutan itu.</p>
+			
+				<div class="tooltip"><label for="1A2" class="pilihanT2 indent">
+				<input type="radio" class="t2s2" id="1A2" value="A. kusut-masai" onclick="receiveAnswer(this, this.parentElement)">A. kusut-masai</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B2" class="pilihanT2 indent">
+				<input type="radio" class="t2s2" id="1B2" value="B. pucat-lesi" onclick="receiveAnswer(this, this.parentElement)">B. pucat-lesi</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C2" class="pilihanT2 indent">
+				<input type="radio" class="t2s2" id="1C2" value="C. calar-balar" onclick="receiveAnswer(this, this.parentElement, 't2s2')">C. calar-balar</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D2" class="pilihanT2 indent">
+				<input type="radio" class="t2s2" id="1D2" value="D. kurus-kering" onclick="receiveAnswer(this, this.parentElement)">D. kurus-kering</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">3. Normah is my sister's daughter. She is my __________.</p>
+			
+				<div class="tooltip"><label for="1A3" class="pilihanT2 indent">
+				<input type="radio" class="t2s3" id="1A3" value="A. niece" onclick="receiveAnswer(this, this.parentElement, 't2s3')">A. niece</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B3" class="pilihanT2 indent">
+				<input type="radio" class="t2s3" id="1B3" value="B. nephew" onclick="receiveAnswer(this, this.parentElement)">B. nephew</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C3" class="pilihanT2 indent">
+				<input type="radio" class="t2s3" id="1C3" value="C. cousin" onclick="receiveAnswer(this, this.parentElement)">C. cousin</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D3" class="pilihanT2 indent">
+				<input type="radio" class="t2s3" id="1D3" value="D. aunt" onclick="receiveAnswer(this, this.parentElement)">D. aunt</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">4. Farhan wishes Raju "<b>break a leg</b>". What does Farhan means?</p>
+			
+				<div class="tooltip"><label for="1A4" class="pilihanT2 indent">
+				<input type="radio" class="t2s4" id="1A4" value="A. Slow down" onclick="receiveAnswer(this, this.parentElement)">A. Slow down</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B4" class="pilihanT2 indent">
+				<input type="radio" class="t2s4" id="1B4" value="B. Good luck" onclick="receiveAnswer(this, this.parentElement, 't2s4')">B. Good luck</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C4" class="pilihanT2 indent">
+				<input type="radio" class="t2s4" id="1C4" value="C. calm down" onclick="receiveAnswer(this, this.parentElement)">C. Calm down</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D4" class="pilihanT2 indent">
+				<input type="radio" class="t2s4" id="1D4" value="D. to joke with Raju" onclick="receiveAnswer(this, this.parentElement)">D. to joke with Raju</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">5. Round <b>243</b> to the nearest ten.</p>
+			
+				<div class="tooltip"><label for="1A5" class="pilihanT2 indent">
+				<input type="radio" class="t2s5" id="1A5" value="A. 200" onclick="receiveAnswer(this, this.parentElement)">A. 200</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B5" class="pilihanT2 indent">
+				<input type="radio" class="t2s5" id="1B5" value="B. 300" onclick="receiveAnswer(this, this.parentElement)">B. 300</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C5" class="pilihanT2 indent">
+				<input type="radio" class="t2s5" id="1C5" value="C. 240" onclick="receiveAnswer(this, this.parentElement, 't2s5')">C. 240</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D5" class="pilihanT2 indent">
+				<input type="radio" class="t2s5" id="1D5" value="D. 245" onclick="receiveAnswer(this, this.parentElement)">D. 245</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+			<p style="margin-bottom: 15px">6. A factory produces 21340 sharpener in January. However the sharpener produced in February 
+				decreased to a scale of 0.8. What is the total number of sharpener produced in both months?</p>
+			
+				<div class="tooltip"><label for="1A6" class="pilihanT2 indent">
+				<input type="radio" class="t2s6" id="1A6" value="A. 24007.5" onclick="receiveAnswer(this, this.parentElement)">A. 24007.5</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B6" class="pilihanT2 indent">
+				<input type="radio" class="t2s6" id="1B6" value="B. 38412" onclick="receiveAnswer(this, this.parentElement, 't2s6')">B. 38412</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C6" class="pilihanT2 indent">
+				<input type="radio" class="t2s6" id="1C6" value="C. 8000" onclick="receiveAnswer(this, this.parentElement)">C. 8000</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D6" class="pilihanT2 indent">
+				<input type="radio" class="t2s6" id="1D6" value="D. 2667.5" onclick="receiveAnswer(this, this.parentElement)">D. 2667.5</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">7. Sejarah kedatangan Islam ke Tanah Melayu dikaitkan dengan negara berikut kecuali?</p>
+			
+				<div class="tooltip"><label for="1A7" class="pilihanT2 indent">
+				<input type="radio" class="t2s7" id="1A7" value="A. Indonesia" onclick="receiveAnswer(this, this.parentElement, 't2s7')">A. Indonesia</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B7" class="pilihanT2 indent">
+				<input type="radio" class="t2s7" id="1B7" value="B. Arab" onclick="receiveAnswer(this, this.parentElement)">B. Arab</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C7" class="pilihanT2 indent">
+				<input type="radio" class="t2s7" id="1C7" value="C. China" onclick="receiveAnswer(this, this.parentElement)">C. China</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D7" class="pilihanT2 indent">
+				<input type="radio" class="t2s7" id="1D7" value="D. India" onclick="receiveAnswer(this, this.parentElement)">D. India</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">8. Gereja ialah tempat ibadat bagi penganut beragama __________.</p>
+			
+				<div class="tooltip"><label for="1A8" class="pilihanT2 indent">
+				<input type="radio" class="t2s8" id="1A8" value="A. Hindu" onclick="receiveAnswer(this, this.parentElement)">A. Hindu</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B8" class="pilihanT2 indent">
+				<input type="radio" class="t2s8" id="1B8" value="B. Islam" onclick="receiveAnswer(this, this.parentElement)">B. Islam</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C8" class="pilihanT2 indent">
+				<input type="radio" class="t2s8" id="1C8" value="C. Buddha" onclick="receiveAnswer(this, this.parentElement)">C. Buddha</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D8" class="pilihanT2 indent">
+				<input type="radio" class="t2s8" id="1D8" value="D. Kristian" onclick="receiveAnswer(this, this.parentElement, 't2s8')">D. Kristian</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">9. Pengguna dapat berkongsi __________ dengan pengguna lain dalam satu rangkaian.</p>
+			
+				<div class="tooltip"><label for="1A9" class="pilihanT2 indent">
+				<input type="radio" class="t2s9" id="1A9" value="A. suis" onclick="receiveAnswer(this, this.parentElement)">A. suis</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B9" class="pilihanT2 indent">
+				<input type="radio" class="t2s9" id="1B9" value="B. wayar" onclick="receiveAnswer(this, this.parentElement)">B. wayar</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C9" class="pilihanT2 indent">
+				<input type="radio" class="t2s9" id="1C9" value="C. maklumat" onclick="receiveAnswer(this, this.parentElement, 't2s9')">C. maklumat</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D9" class="pilihanT2 indent">
+				<input type="radio" class="t2s9" id="1D9" value="D. modem" onclick="receiveAnswer(this, this.parentElement)">D. modem</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+
+			<p style="margin-bottom: 15px">10. Keburukan gula tiruan aspartame adalah __________.</p>
+			
+				<div class="tooltip"><label for="1A10" class="pilihanT2 indent">
+				<input type="radio" class="t2s10" id="1A10" value="A. merosakkan sel otak" onclick="receiveAnswer(this, this.parentElement, 't2s10')">A. merosakkan sel otak</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1B10" class="pilihanT2 indent">
+				<input type="radio" class="t2s10" id="1B10" value="B. kencing manis" onclick="receiveAnswer(this, this.parentElement)">B. kencing manis</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1C10" class="pilihanT2 indent">
+				<input type="radio" class="t2s10" id="1C10" value="C. kerap berpeluh" onclick="receiveAnswer(this, this.parentElement)">C. kerap berpeluh</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+
+				<div class="tooltip"><label for="1D10" class="pilihanT2 indent">
+				<input type="radio" class="t2s10" id="1D10" value="D. obesiti" onclick="receiveAnswer(this, this.parentElement)">D. obesiti</label>
+				<span class="tooltiptext">Click to answer!</span></div>
+			
+	</div>
+
+<script>hideSoalanT1()</script>
+<script>hideSoalanT2()</script>
+
+</body>
+</html>

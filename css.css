@@ -1,0 +1,74 @@
+h1 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+body {
+	background-color: #0099cc;
+}	
+
+#soalanTahap1 p, #soalanTahap2 p {
+	margin: 55px 230px 0 0;
+}
+
+.button {
+	text-align: center;
+	margin-top: 30px;
+}
+
+button {
+	font-size: 1.05em;
+	background-color: #D44A8F;
+	font-weight: bold;
+}
+
+#select {
+	text-align: center;
+	margin-top: 75px;
+	font-size: 1.6em;
+	background-color: #A00AAD;
+}
+
+
+.pilihanT1 {
+	background-color: #A5AD0C;
+	border-radius: 6px;
+}
+
+.pilihanT2 {
+	background-color: #089950;
+	border-radius: 6px;
+}
+
+.indent {
+	margin-left: 30px;
+}
+
+#soalanTahap1, #soalanTahap2 {
+	font-size: 1.5em;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 85px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 0.5em;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 102%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
