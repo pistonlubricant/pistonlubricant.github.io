@@ -29,6 +29,16 @@ button {
 	background-color: #A00AAD;
 }
 
+#instruc {
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 600px;
+	margin-right: 600px;
+	font-size: 1em;
+	background-color: #383ACF;
+	border-style: solid;
+	border-radius: 10px;
+}
 
 .pilihanT1 {
 	background-color: #A5AD0C;
